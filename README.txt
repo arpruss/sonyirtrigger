@@ -1,0 +1,1 @@
+Trigger a Sony camera with an IR LED a set amount of time after a light beam is interrupted.
