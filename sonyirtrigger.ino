@@ -2,6 +2,8 @@
 #include <IRremote.hpp>
 #include <EEPROM.h>
 
+// long sensor lead to A6; short to +3.3V.
+
 #define LED PB12
 #define LIGHT_SENSOR PA6
 #define CMDLINE_MAX 256
@@ -147,8 +149,8 @@ void loop() {
 
   if (ready && x < sensorThreshold) {
     Serial.println("trigger");
-    delay(shutterDelay);
     digitalWrite(LED,0);
+    delay(shutterDelay);
     shutter();
     digitalWrite(LED,1);
   }
